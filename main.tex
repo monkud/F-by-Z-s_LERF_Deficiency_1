@@ -1,0 +1,260 @@
+
+\include{top}
+
+
+\title[LERF-ness of F-by-Z's and deficiency 1 groups]{A note on subgroup separability of free-by-cyclic and deficiency 1 groups}
+\author{Monika Kudlinska}
+\date{September 2022}
+
+\address{Mathematical Institute, Andrew Wiles Building, Observatory Quarter, University of Oxford, Oxford OX2 6GG, UK}
+\email{monika.kudlinska@maths.ox.ac.uk}
+\date{\today}
+
+\subjclass[2020]{Primary 20J05; Secondary ...}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We show that a free-by-cyclic group with a polynomially growing monodromy is subgroup separable exactly when it is virtually $F_n \times \mathbb{Z}$. We also prove that random deficiency 1 groups are not subgroup separable, with positive asympotic probability.
+\end{abstract}
+
+\section{Introduction}
+
+A group $G$ is said to be \emph{subgroup separable} (or \emph{LERF}) if every finitely generated subgroup of $G$ is closed in the profinite topology. Historically, subgroup separability gained prominence through its applications to low-dimensional topology and specifically 3-manifold theory, as it allows for certain immersions to be lifted to embeddings in finite index covers. It has since become useful in a much wider group theoretic setting, in particular for proving profinite rigidity results. For instance, Hughes--Kielak \cite{HughesKielak2022} showed that algebraic fibring is a profinite invariant of LERF groups.
+
+By a classical result of M.~Hall \cite{Hall}, subgroup separability is known to hold for finitely generated free groups. More recently, D.~Wise \cite{Wise} showed that if $G$ is a finite graph of finitely generated free groups with cyclic edge groups, then $G$ is subgroup separable if and only if it does not contain a non-trivial element $g$ such that $g^n$ is conjugate to $g^m$, for some $n \neq \pm m$. Any free-by-cyclic group which admits a linearly growing UPG monodromy can be realised as finite graph of groups, with vertex groups of the form $F_n \times \mathbb{Z}$ and $\mathbb{Z}^2$ edge groups \cite[Proposition 5.2.2]{NM}. It is therefore tempting to conjecture that such free-by-cyclic groups are subgroup separable. The aim of this paper is the show that this is not true. 
+
+\begin{thmx}\label{main}
+Let $\Phi \in \mathrm{Out}(F_n)$ be a polynomially growing outer automorphism. Then $G_{\Phi} = F_n \rtimes_{\Phi} \mathbb{Z}$ is subgroup separable if and only if $\Phi$ is periodic.
+\end{thmx}
+
+In fact, Theorem~\ref{main} implies that a free-by-cyclic group $G$ is not subgroup separable as soon as there exists some fibring of $G$ with fibre $F \simeq F_n$ and associated monodromy $\varphi \in \mathrm{Out}(F)$, such that $\varphi$ acts polynomially and not periodically on some conjugacy class of $F$.
+\begin{corx}\label{cor}
+Let $\Phi \in \mathrm{Out}(F_n)$ and let $G = F_n \rtimes_{\Phi} \mathbb{Z}$. \begin{enumerate}
+    \item If $\Phi$ acts periodically on every conjugacy class of elements in $F_n$ then $G$ is subgroup separable.
+    \item  If there exists a conjugacy class $\bar{g}$ in $F_n$ which grows polynomially of order $d > 0$ under the action of $\Phi$ then $G$ is not subgroup separable.
+\end{enumerate}
+\end{corx}
+
+It is well-known that fundamental groups of compact hyperbolic 3-manifolds are subgroup separable. Hence, if $G$ is the fundamental group of the mapping torus of a pseudo-Anosov mapping class $f$ of a punctured surface $S$, then $G$ is a free-by-cyclic group which is LERF and the induced outer automorphism $f_{*}$ acts periodically on the conjugacy classes corresponding to the boundary components of $S$, and exponentially on the remaining conjugacy classes. This leads to the  following natural question:
+
+\begin{question}\label{qn}
+Let $\Phi \in \mathrm{Out}(F_n)$ be an outer automorphism of $F_n$ which acts periodically or exponentially on every conjugacy class, and there exists at least one conjugacy class with each type of growth. Suppose that $G = F_n \rtimes_{\Phi} \mathbb{Z}$ is LERF. Does it follow that $\Phi$ is geometric?
+\end{question}
+
+The remaining class of free-by-cyclic groups for which LERF-ness is not yet classified, is the class of free-by-cyclic groups with monodromy which acts exponentially on every conjugacy class. By the work of \cite{DL}, these are exactly the Gromov hyperbolic free-by-cyclic groups. Leary--Niblo--Wise  \cite{LNW} construct examples of hyperbolic free-by-cyclic groups which are not subgroup separable, by realising such groups as ascending, non-descending HNN extensions of finitely generated free groups. It is interesting to note that whilst the failure of subgroup separability in the Leary--Niblo--Wise examples is due to the non-symmetricity of the BNS invariant, free-by-cyclic groups with polynomially growing monodromies have symmetric BNS invariants \cite{CashenLevitt2016}.
+
+It is a general fact that if a group $G$ has a non-empty, non-symmetric BNS invariant, then $G$ is not subgroup separable. We can leverage this fact to prove results about LERF-ness for random groups which admit deficiency 1 presentations. 
+\begin{thmx}\label{random}
+Let $G$ be a random group of deficiency 1. Then with positive probability, $G$ is not subgroup separable.
+\end{thmx}
+Kielak--Kropholler--Wilkes \cite{KKW} show that a random deficiency 1 group is free-by-cyclic with positive asymptotic probability. In order to use Theorem~\ref{random} to prove an analogous statement for free-by-cyclic groups, we would need a random deficiency 1 group to be free-by-cyclic, almost surely. In fact, our methods for proving Theorem~\ref{random} imply that this cannot be the case. 
+\begin{corx}
+Let $G$ be a random group of deficiency 1. Then $G$ is free-by-cyclic with asymptotic probability bounded away from 1.
+\end{corx}
+
+\subsection*{Acknowledgements}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Background}
+
+\subsection{Growth of free group automorphisms}
+
+Let $F$ be a finite rank free group and fix a free set of generators $S$ of $F$. For any $g\in F$, we denote by $|g|$ the length of the reduced word representative of $g$. We write $|\bar{g}|$ to denote the minimal length of a cyclically reduced word representing a conjugate of $g$. %Given an automorphism $\varphi \in \mathrm{Aut}(F)$, we say $g \in F$ grows polynomially of order $d$ under the iteration of $\varphi$ if there exists a degree $d$ polynomial $p(n)$ such that the sequence $(x_n)$ is bounded away from 0 and infinity, where \[x_n = \frac{|\varphi^{n}(g)|}{p(n)}.\] 
+
+For an outer automorphism $\Phi \in \mathrm{Out}(F)$, $\Phi$ acts on the conjugacy classes of elements in $F$. Given a conjugacy class $\bar{g}$ of an element $g\in F$, we say that $\bar{g}$ grows polynomially of degree $d$ under the iteration of $\Phi$, if there exist constants $C_1, C_2 > 0$ such that for all $n\geq 1$, \[C_1 n^d \leq |\Phi^n(\bar{g})| \leq C_2 n^d.\] Note that if $H \leq F$ is a subgroup whose conjugacy class in $F$ is preserved by $\Phi$, then for any $g \in H$ the order of growth of the conjugacy class $\bar{g}$ in $H$ is equal to the order of growth of the conjugacy class in $F$. 
+
+We say $\Phi$ grows polynomially of degree $d$ if every conjugacy class of elements of $F$ grows polynomially of degree $\leq d$ under the iteration of $\Phi$, and there exists a conjugacy class which grows polynomially of degree exactly $d$.
+
+Let $\Gamma$ be a graph. We will assume that every map $f \colon \Gamma \to \Gamma$ 
+sends vertices to vertices, and edges to immersed non-trivial edge paths. Given an edge path $\gamma$ in $\Gamma$, we write $|\gamma|$ to denote the minimal simplicial length of an edge path in the homotopy class of $\gamma$, rel. endpoints.  We define polynomial growth of degree $d$ of an edge path $\gamma$ in $\Gamma$ under the iteration of $f$ analogously to the definition of the growth of a conjugacy class. Similarly for the growth of the map $f$.
+
+Note that if $f \colon \Gamma \to \Gamma$ is an improved train track representative of the outer automorphism $\Phi \in \mathrm{Out}(F)$ and $f$ grows polynomially of degree $d \geq 1$, then $\Phi$ grows polynomially of degree $d$.
+\begin{lemma}\cite{Levitt}
+Let $\Phi \in \mathrm{Out}(F_n)$ be an outer automorphism which grows polynomially of degree $d$. Then, the following hold:
+\begin{itemize}
+    \item $d \leq n-1$;
+    \item $d = 0$ if and only if $\Phi$ has finite order in $\mathrm{Out}(F_n)$.
+\end{itemize}
+\end{lemma}
+
+\subsection{Group rings and the Bieri--Neumann--Strebel invariant}
+
+Let $G$ be a group and $\phi \colon G \to \mathbb{Z}$ a homomorphism. The \emph{Novikov ring} $\widehat{\mathbb{Q}G}^{\phi}$ of $G$ with respect to $\phi$, is the set of all formal sums $x = \sum_{g\in G} {\lambda}_g g$ where $\lambda_g \in \mathbb{Q}$, such that for any $r \in \mathbb{R}$, the intersection $\phi^{-1}(\mathrm{supp}(x)) \cap (-\infty, r]$ is a finite set. Multiplication and addition in $\widehat{\mathbb{Q}G}^{\phi}$ are defined in the obvious way, so that the natural inclusion $\mathbb{Q}G \leq \widehat{\mathbb{Q}G}^{\phi}$ is an embedding of rings. 
+
+
+\begin{lemma}\label{units}
+Let $G$ be a group and $\phi \colon G \to \mathbb{Z}$ a homomorphism. Then, for any $g\in G$ and $\alpha \in \mathbb{Q}^{\times}$, $g- \alpha$ is a unit in $\widehat{\mathbb{Q}G}^{\phi}$ if and only if $\phi(g)\neq 0$.
+\end{lemma}
+
+\begin{proof}
+
+Suppose $\phi(g) \neq 0$. If $\phi(g) > 0$ then the formal sum \[h = \alpha^{-1}\cdot\sum_{i = 0}^{\infty} (\alpha^{-1}g)^i\] is an element of $\widehat{\mathbb{Q}G}^{\phi}$, and $(\alpha - g)h = h(\alpha -g) = 1$. If $\phi(g) < 0$, then $\phi(g^{-1}) > 0$ and since $g$ is a unit in $\widehat{\mathbb{Q}G}^{\phi}$, it follows that $g-\alpha = \alpha g (\alpha^{-1}-g^{-1})$ is also a unit.
+
+Suppose that $\phi(g) = 0$, and for contradiction assume that there exists some $h \in \widehat{\mathbb{Q}G}^{\phi}$ such that $(g-\alpha)h = 1$. Write $h = \sum_{k\in G} \lambda_k k$, for $\lambda_k \in \mathbb{Q}$ such that for any $r \in \mathbb{R}$, there are only finitely many $k \in G$ with $\phi(k) \leq r$ and $\lambda_k \neq 0$. Since $(g-\alpha)h = 1$, we have that for all $n > 0$, $\lambda_{g^n} = \alpha^{-n} \cdot \lambda_{1_G}$ and $\lambda_{g^{-n}} = \alpha^{n-1}(\alpha\cdot \lambda_{1_G} + 1)$. Hence $\lambda_{g^n} \neq 0$ for all $n > 0$, or $\lambda_{g^{-n}} \neq 0$ for all $n > 0$. However $\phi(g^{n}) = n \cdot \phi(g) = 0$ for all $n \in \mathbb{Z}$. Since $g \in G$ has infinite order, it follows that $\mathrm{supp}(h) \cap \phi^{-1}((-\infty, 0 ])$ is infinite. This is a contradiction.\end{proof}
+
+The significance of the Novikov ring lies in its relation to the Bieri--Neumann--Strebel invariant of a group $G$. 
+
+\begin{defn}\cite{BNS}
+The Bieri--Neumann--Strebel invariant (also known as the BNS invariant)  $\Sigma(G)$ of a group $G$, is the set of non-zero homomorphisms $\phi\colon G \to \mathbb{R}$ such that the monoid $\{g\in G \mid \phi(g) \geq 0\}$ is finitely generated.
+\end{defn}
+
+\begin{thm}[Sikorav]\cite{Sikorav, Kielak}\label{Sikorav}
+Let $G$ be a finitely generated group and $\phi \colon G \to \mathbb{Z}$ an epimorphism. Then $\phi$ is an element of the BNS invariant $\Sigma(G)$ of $G$ if and only if $H_1(G; \widehat{\mathbb{Q}G}^{\phi}) = 0$.
+\end{thm}
+
+Non-symmetricity of the BNS invariant provides a useful criterion for detecting when a group is not subgroup separable. 
+
+\begin{lemma}\label{separability}
+If the BNS invariant $\Sigma(G)$ of $G$ is non-empty and non-symmetric, then $G$ is not subgroup separable. 
+\end{lemma}
+
+\begin{proof}
+Let $\phi \in \Sigma(G)$ be such that $ \phi \not \in -\Sigma(G)$. By \cite[Theorem A]{BNS}, $\Sigma(G)$ is an open subset of  $H^1(G ; \mathbb{R})$, and it is invariant under scaling by positive numbers. Hence we may assume that the image of $\phi$ lies inside $\mathbb{Z}$. Then \cite[Proposition~4.1]{BNS} implies that there exists a finitely generated subgroup $A \leq G$ and an injective, non-surjective endomorphism $\theta \colon A \to A$, such that $G \simeq A \ast_{\theta}$. A standard argument (see e.g. \cite[Proposition 4]{LNW}) shows that if $G$ contains subgroups $B \leq A$ which are conjugate in $G$, then $B$ can't be separated from any $g\in A \setminus B$ in any finite quotient of $G$. Hence $\mathrm{Im}(\theta)$ is a non-separable subgroup of $G$.
+%Let $g \in A \setminus A'$. Then, for any homomorphism $\pi \colon G \to F$ of $G$ onto a finite group $F$, we have that $\pi(A') \leq \pi_(A)$ . However, since $A$ and $A'$ are conjugate in $G$, $\pi(A)$ and $\pi(A')$ are conjugate in $F$. This implies that $\pi(S' \leq \pi(A)$ have the same finite order, and thus $\pi(A) = \pi(F')$. Hence no element in $A \setminus A'$ can be separated from $A'$ in any finite quotient of $G$.
+\end{proof}
+
+\subsection{Random groups}
+
+Let $k \in \mathbb{Z}$. A deficiency $k$ presentation is a presentation of the form 
+\[\langle x_1, \ldots, x_{m} \mid r_1, \ldots, r_n \rangle,\] where $m -n = k$, and $r_1, \ldots, r_n$ are non-empty, reduced words in the alphabet $\{x_1^{\pm}, \ldots, x_m^{\pm}\}$. A group $G$ is said to be deficiency $k$ if it admits a deficiency k presentation and if it does not admit a deficiency $k'$ presentation, for any $k' \geq k$. 
+
+In this article, we will use the \emph{few relator model} for random groups. After fixing $n \geq 1 $ and $m \geq 1$, and for any $l \geq 1$, we write $\mathcal{R}_l$ to denote the set of group presentations of the form $\langle x_1, \ldots, x_m, \mid r_1, \ldots, r_n \rangle$, where each $r_i$ is a cyclically reduced non-empty word in the alphabet $\{x_1^{\pm}, \ldots, x_m^{\pm}\}$, of length $\leq l$. Let $P$ be a property of groups. We say a presentation satisfies property $P$ if the corresponding group satisfies $P$. The property $P$ is said to hold with \emph{asymptotic probability $p$}, for some $0 \leq p \leq 1$, if 
+\[\frac{\#\{ \text{presentations in }\mathcal{R}_l \text{ which satisfy P}\}}{\#\mathcal{R}_l} \to p \text{ as }l \to \infty.\]
+The property $P$ is said to hold with \emph{positive asymptotic probability} if 
+\[\mathrm{lim \, inf}_{l \to \infty} \frac{\#\{ \text{presentations in }\mathcal{R}_l \text{ which satisfy P}\}}{\#\mathcal{R}_l} > 0. \]
+Finally, we say that the property $P$ holds \emph{almost surely}, if it holds with asymptotic probability $p = 1$.
+
+\section{Polynomially growing case}
+
+Let $\Phi \in \mathrm{Out}(F)$ be a polynomially growing outer automorphism with growth of order $d \geq 1$. The property of being subgroup separable is preserved under taking finite-index subgroups and overgroups, and thus we can replace $\Phi$ by a power so that it is represented by an improved relative train track $f \colon \Gamma \to \Gamma$. In particular, $f$ fixes all the vertices of $\Gamma$ and we will furthermore assume that $\Gamma$ has no valence-one vertices. Let $\emptyset = \Gamma_0 \subset \Gamma_1 \subset \ldots \subset \Gamma_n = \Gamma$ be the associated filtration, so that $\Gamma_i$ is obtained from $\Gamma_{i-1}$ by adding an oriented edge $E_i$ and $f(E_i) = E_i \gamma_i$, where $\gamma_i$ is an immersed loop in $\Gamma_{i-1}$. We write $M_f$ to denote the mapping torus of $f \colon \Gamma \to \Gamma$. 
+
+\begin{thm}\emph{\cite{BKS}}\label{BKS} Fix a free basis $\{a,b\}$ of $F_2$ and let $\Phi \in \mathrm{Out}(F_2)$ be the outer automorphism represented by $\varphi \in \mathrm{Aut}(F_2)$, $\varphi(a) = a$, $\varphi(b) = ba$. Then the group $G_{\mathrm{BKS}}= F_2 \rtimes_{\Phi} \mathbb{Z}$ is not subgroup separable.
+\end{thm}
+
+\begin{proof}[Proof of Theorem~\ref{main}]
+We will show by induction on $n$, that for every improved relative train track map $f \colon \Gamma \to \Gamma$ with filtration of length $n$, which induces a polynomially growing outer automorphism $\Phi$ of a finitely generated free group with growth of order $d > 0$, the fundamental group of the mapping torus $M_f$ is not subgroup separable.
+
+The base case is $n = 2$. There exists exactly one improved relative train track with filtration of length $2$ as in the hypothesis. This is the map $f \colon \Gamma \to \Gamma$, where $\Gamma$ consists of a single vertex and two edges $E_1$ and $E_2$, and $f(E_1) = E_1$, $f(E_2) = E_2E_1$. The fundamental group of the mapping torus $M_f$ of $f$ is isomorphic to the group $G_{\mathrm{BKS}}$ from Theorem~\ref{BKS}. Hence $\pi_1 M_f$ is not subgroup separable by Theorem~\ref{BKS}.
+
+Let $n\geq 2$ and assume that the result holds for all improved relative train track maps with filtration of length at most $n$. Let $f \colon \Gamma \to \Gamma$ be an improved train track map with filtration \[\emptyset = \Gamma_0 \subset \Gamma_1 \subset \ldots \subset \Gamma_{n+1} = \Gamma.\] Let $\left\{\Gamma_n^{(i)}\right\}_{i\in I}$ be the set of connected components of $\Gamma_n$. Since $\Gamma = \Gamma_{n+1}$ is connected, $|I| \leq 2$. Since $\Gamma_{n+1}$ has no valence-one vertices, each $\Gamma_n^{(i)}$ is not simply-connected. Furthermore, the map $f$ preserves each $\Gamma_n^{(i)}$ and thus the fundamental group of the mapping torus of $f$ restricted to $\Gamma^{(i)}_n$ embeds as a subgroup of $\pi_1 M_f$. Since the property of being subgroup separable passes to subgroups, it suffices to show that at least one of the mapping tori of the restriction maps has a fundamental group which is not subgroup separable.
+
+For each $i$, contract the edges of $\Gamma_n^{(i)}$ whose endpoints have valence one until the resulting graph has no vertices of valence one. Then $f$ restricted to each $\Gamma^{(i)}_n$ is itself an improved relative train track map, and the resulting filtration has length strictly less than $n+1$. If for at least one $i$, $f \colon \Gamma_n^{(i)} \to \Gamma_n^{(i)}$ induces an automorphism with growth of order $d > 0$ then the result follows by the inductive hypothesis. %Note that there exists at least one $i$ for which $\Gamma_n^{(i)}$ is not simply-connected, otherwise each edge of $\Gamma_{n}$ and $E_{n+1}$ is necessarily fixed by $f$ and hence the map $f$ has growth of order 0. 
+
+Suppose now that $\Gamma_{n}$ is connected and $f$ restricted to $\Gamma_n$ induces an outer automorphism with growth of order 0. Let $x_0$ be the start vertex of $E_{n+1}$. Let $T$ be a maximum spanning tree for $\Gamma$ containing $x_0$ such that $T \cap \Gamma_{n}$ is a maximum spanning tree for $\Gamma_n$. Let $\{a_1, \ldots, a_k\}$ be the resulting basis for $\Gamma_n$, such that the $a_i's$ combined with the loop $c$ generate $\pi_1(\Gamma, x_0)$.  Let $\Psi \in \mathrm{Out}(\pi_1(\Gamma_n, x_0))$ be the outer automorphism of $\Gamma_n$ induced by $f$ restricted to $\Gamma_n$. Since $f|_{\Gamma_n}$ is an improved train track representative which induces an UPG automorphism with polynomial growth of order 0, it fixes every edge. Hence%Since $\Psi$ has polynomial growth of order 0, it has finite order $N \geq 1$ in $\mathrm{Out}(\pi_1(\Gamma_n))$ and thus there exists some element $w \in \pi_1(\Gamma_n, x_0)$ such that $\psi^N$ is the inner automorphism $\iota_w$ corresponding to conjugation by $w$. Hence the mapping torus $M_f$ admits a presentation of the form
+\[\pi_1(\Gamma, x_0) = \langle a_1, \ldots, a_k, c , t \mid a_i^t = a_i\ \forall i, c^t = cu \rangle.\]
+for some element $u \in F(a_1, \ldots, a_k)$. Note that since $G$ is assumed to be free-by-cyclic with respect to polynomially growing monodromy of order strictly greater than zero, and since the growth of the monodromy is an invariant of the quasi-isometry class of the mapping torus by the work of  Macura \cite{M}, the element $u$ is non-trivial. Hence the subgroup $\langle u, c, t \rangle \leq \pi_1(\Gamma, x_0)$ is isomorphic to the group $G_{\mathrm{BKS}}$ in Theorem~\ref{main} and thus it is not subgroup separable. Hence $\pi_1(\Gamma, x_0) \simeq \pi_1 M_f$ is not subgroup separable.
+
+Finally, suppose that $\Gamma_n$ is not connected and $f$ restricted to each $\Gamma_n^{(i)}$ induces an outer automorphism with growth of order 0. Orient $E_{n+1}$ so that the endpoint of $E_{n+1}$ is a vertex of $\Gamma^{(2)}_{n}$. As before, $f$ fixes each edge of $\Gamma_n^{(1)}$ and $\Gamma_n^{(2)}$, and $f(E_{n+1}) = E_{n+1} \gamma$, for some immersed path $\gamma$ in $\Gamma_{n+1}^{(2)}$. In particular, the fundamental group of $\pi_1(\Gamma)$ is isomorphic to a group of the form $(F_1 \times Z_1) \ast_{Z_3} (F_2 \times Z_2)$, where each $Z_i$ is infinite cyclic and each $F_k$ is non-trivial, finite rank free. By \cite{NW}, such a group is subgroup separable if and only if it is virtually a direct product of a free group with an infinite cyclic group. However, since we have assumed that the growth of $\Phi$ is polynomial of order $d > 0$, again by the work of Macura \cite{M} and the asusumpotion on $f$, $\pi_1(\Gamma)$ cannot be of this form. Hence it is not subgroup separable. \end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Generic behaviour of deficiency 1 groups}
+
+Let $R$ be a ring and $t$ a formal symbol. We write $R(\!(t)\!)$ to denote the set of Laurent polynomials over $R$ with a single variable $t$,
+\[R(\!( t )\!) = \left\{ \sum_{i \geq k} a_it^{i} \mid a_i \in R, k \in \mathbb{Z}\right\}. \]
+Let $\alpha$ be an automorphism of $R$. The ring of \emph{twisted Laurent series} is the set $R(\!(t)\!)$, with the obvious summation and multiplication defined by linearly extending 
+\[r_1t^{n_1} \cdot r_2t^{n_2} := r_1 \alpha(r_2) t^{n_1 + n_2},\] for all $r_1, r_2 \in R$ and $n_1, n_2 \in \mathbb{Z}$. The \emph{$t$-order} of a Laurent series $f \in R(\!(t)\!)$, denoted $\mathrm{ord}_t(f)$, is the lowest power of $t$ with a non-zero coefficient in the expansion of $f$.
+
+Let $G$ be a group and $\phi \colon G \to \mathbb{Z}$ a homomorphism. Let $t \in G$ be an element such that $\phi(t) = 1$. Let $K = \mathrm{ker}(\phi)$ and let $\mathbb{Q}K (\!(t)\!)$ denote the ring of twisted Laurent series, where the twisting automorphism $\alpha$ is obtained by extending the automorphism of $K$ induced by the conjugation action of $t$ on $K$ in $G$. Then there is a natural identification $\widehat{\mathbb{Q}G}^{\phi} \simeq \mathbb{Q}K(\!(t)\!)$. Given a subset $S \subseteq \mathbb{Z}$, we say $x \in \widehat{\mathbb{Q}G}^{\phi}$ is supported over $S$ if $x = \sum_{i \in S}a_it^{i}$, for some $a_i \in \mathbb{Q}K$.
+
+\begin{lemma}\label{invertibility}
+Let $B$ and $P$ be $n \times n$ matrices over $\mathbb{Q}G$. Suppose that $B = \mathrm{diag}(k_1t^{\rho_1}, \ldots, k_nt^{\rho_n})$, where $k_i \in \mathbb{Q}K$ and $\rho_i \in \mathbb{Z}$ for every $1 \leq i \leq n$. Assume that $k_i \in K$ for $i > 1$ and $k_1$ is not a unit over $\widehat{\mathbb{Q}G}^{\phi}$. Suppose that all the elements in the $i^{th}$ row of $P$ are supported over $\mathbb{Z} \cap [\rho_{i} + 1, \infty)$. Then the matrix $A = B+ P$ is not invertible over $\widehat{\mathbb{Q}G}^{\phi}$.
+\end{lemma}
+\begin{proof}
+Since $t^{\rho_1}$ and $k_it^{\rho_i}$ for $i > 1$ are units in $\mathbb{Q}G$, the matrix \[M = \mathrm{diag}(t^{\rho_1}, k_2t^{\rho_2},  \ldots, k_nt^{\rho_n})\] is an invertible matrix over $\widehat{\mathbb{Q}G}^{\phi}$. Hence $A$ is invertible if and only if $A' = M^{-1}A$ is invertible. The diagonal elements of $A'$ other than the element in the first row are of the form $1 + p_{ii}$, for some $p_{ii} \in \widehat{\mathbb{Q}G}^{\phi}$ supported over a positive subset of the integers. Such elements are invertible over $\widehat{\mathbb{Q}G}^{\phi}$ and the inverse $(1+ p_{ii})^{-1}$ is an element supported over non-negative integers. Hence by applying elementary row operations over $\widehat{\mathbb{Q}G}^{\phi}$, we may transform $A'$ into an upper triangular matrix $A''$ where the first element on the diagonal is given by $k_1 + p'_{11}$, with $k_1 \in \mathbb{Q}K$ a non-unit, and $p'_{11} \in \widehat{\mathbb{Q}G}^{\phi}$, an element supported over the positive integers.  Since elementary row operations are invertible, again $A''$ is invertible if and only if $A'$ is invertible. 
+
+Suppose now that $A''$ is invertible over $\widehat{\mathbb{Q}G}^{\phi}$, and let $C = (c_{ij})$ be the inverse. Then $c_{11}(k_1 + p'_{11}) = 1$. Suppose that $\mathrm{ord}_t(c_{11}p_{11}') > 0$. Then $\mathrm{ord}_t(c_{11}k_1) = \mathrm{ord}_t(1 - c_{11}p_{11}') = 0$. Hence \[ 0 = \mathrm{ord}_t(c_{11} k_1) = \mathrm{ord}_t(c_{11}) + \mathrm{ord}_t(k_1) = \mathrm{ord}_t(c_{11}).\] Let $d \in \mathbb{Q}K$ be the coefficient of the $t^0$ term in $c_{11}$. Note that $d \neq 0$. Then $dk_{1} = 1$ and thus $k_1$ is a unit. Hence $\mathrm{ord}_t(c_{11}p_{11}') \leq 0$.
+
+Suppose that $\mathrm{ord}_t(c_{11}p_{11}') < 0$. Then \[\mathrm{ord}_t(c_{11}k_1) = \mathrm{ord}_t(1 - c_{11}p_{11}') = \mathrm{ord}_t(c_{11}p_{11}').\]
+Hence $\mathrm{ord}_t(c_{11}k_1) = \mathrm{ord}_t(c_{11}p_{11}')$. Thus \[0 = \mathrm{ord}_t(k_1) = \mathrm{ord}_t(p_{11}') >0.\] 
+Hence, it must be the case that $\mathrm{ord}_t(c_{11}p_{11}') = 0$. But then $\mathrm{ord}_t(c_{11}) < 0$ and thus $\mathrm{ord}_t(c_{11}k_1) < 0$. But then $\mathrm{ord}_t(1 - c_{11}p_{11}') < 0$, which is impossible since $\mathrm{ord}_t(c_{11}p_{11}') = 0$. In all cases we get a contradiction, and thus $A''$ is not invertible.\end{proof}
+
+Given a cyclically reduced word $w = w_1\ldots w_m$ in the alphabet $\{x_1^{\pm}, \ldots, x_{n+1}^{\pm}\}$ and $k \leq |w|$, we let $[w]_k = w_1 \ldots w_k$ be the prefix of $w$ of length $k$. Let $C_w$ denote the cyclic graph of order $|w|$ with a marked vertex $\ast$ and labelled edges, such that consecutive edges of $C_w$, starting at the vertex $\ast$ and moving in the clockwise direction, spell out the word $w$. Assign labels to vertices of $C_w$ so that the vertex $v$ is labelled by the word which is spelled out by the embedded path joining $\ast$ to $v$, in the clockwise direction. Let $\phi \colon F(x_1, \ldots, x_{n+1}) \to \mathbb{Z}$ be a homomorphism. There's an induced map $\phi \colon C_w \to \mathbb{Z}$ defined by linearly extending the map from the labels of the vertices to the whole graph. We define the \emph{lower section} of $w$ to be the preimage 
+\[L_{\phi}(w) = \phi^{-1}(\mathrm{min}\{\phi(x) \mid x \in C_r\}).\]
+
+Let $(r_1, \ldots, r_n)$ be a collection of cyclically reduced words in the alphabet $\{x_1^{\pm}, \ldots, x_{n+1}^{\pm}\}$. Let $\phi \colon F(x_1, \ldots, x_{n+1}) \to \mathbb{Z}$ be a homomorphism. The tuple $((r_1, \ldots, r_n), \phi)$ is said to satisfy the \emph{unique minimum condition} if, after possible re-ordering, the following conditions are satisfied.
+\begin{enumerate}
+    \item We have that $\phi(x_i) \geq 0$ for each $i \leq n$ and $\phi(x_{n+1}) \neq 0$. 
+    \item The homomorphism $\phi$ vanishes on each $r_i$.
+    \item The lower section $L_{\phi}(r_i)$ consists of exactly one of the following:
+\begin{itemize}
+    \item A single vertex whose adjacent edges are labelled by $x_i^{\pm}$ and $x_{n+1}^{\pm}$.
+    \item A single edge labelled by $x_i^{\pm}$ whose adjacent edges are labelled by $x_{n+1}^{\pm}$.
+\end{itemize}
+\end{enumerate}
+The tuple $((r_1, \ldots, r_n), \phi)$ satisfies the \emph{repeated minimum condition} if it satisfies the unique minimal condition, except at a single relator $r_j$, for some $1 \leq j \leq m$, where $L_{\phi}(r_j)$ consists of at least two occurrences of a vertex or edge as in the unique minimum condition. In that case, we call $r_j$ the \emph{relator with a repeated minimum}.
+
+Let $G$ be a group given by the deficiency 1 presentation \[G = \langle x_1, \ldots, x_{n + 1} \mid r_1, \ldots, r_n \rangle.\] Let $\phi \colon G \to \mathbb{Z}$ be a homomorphism with kernel $K$ and $t \in G$ an element such that $\phi(t) = 1$. 
+
+\begin{lemma}\label{matrix}
+Suppose that $((r_1, \ldots, r_n), \phi)$ satisfies the repeated minimum condition, where $r_1$ is the relator with a repeated minimum. Then for each $i\leq n$, there exists some integer $P_i \in \mathbb{Z}$, and for every $j \leq n$ and $k \geq P_i$, there exist elements $u_{ij,k} \in \mathbb{Q}K$, such that the Fox derivatives of $r_i$ are of the form 
+\[\frac{\partial r_i}{\partial x_j} = \sum_{k \geq P_i} u_{ij, k}t^{k},\]
+such that for any $i \neq j$, the element $u_{ij, P_i} = 0$, and $u_{ii, P_i} \in K$ for $i \neq 1$, and $u_{11, P_1}$ is a non-unit in $\widehat{\mathbb{Q}G}^{\phi}$.
+\end{lemma}
+
+\begin{proof}
+
+For every relator $r_i$ and generator $x_j$, the partial derivative $\frac{\partial r_i}{x_j}$ is the sum of prefixes of $r_i$ of the form $ux_j^{-1}$ and $v$, where $v$ immediately precedes an instance of $x_j$ in $r_i$. For each $i$, let $P_i = \phi(L_{\phi}(r_i)) \in \mathbb{Z}$. Hence, for every summand $u$ of $\frac{\partial r_i}{\partial x_j} \in \mathbb{Z}G$, we have that $\phi(u) \geq P_i$ and $\phi(u) = P_i$ if and only if $u$ is the label of a vertex of $C_{r_i}$ contained in $L_{\phi}(r_i)$. Any such vertex has adjacent edges labelled by $x_i^{\pm}$ and $x_{n+1}^{\pm}$. In particular, either the prefix $u$ has $x_i^{\pm}$ as its last letter and is followed by $x_{n+1}^{\pm}$ in $r_i$, or the same holds but with the roles of $x_i$ and $x_{n+1}$ reversed. This implies that for every summand $u$ of $\frac{\partial r_i}{\partial x_j}$, if $i \neq j$ then $\phi(u) > P_i$.
+
+Now suppose that $i > 1$. Let $\mathcal{A} = \{u_{\alpha}\}$ be the collection of summands of $\frac{\partial r_i}{x_i}$ such that $\phi(u_{\alpha}) = P_i$. Each element of $\mathcal{A}$ must be the label of a vertex in $L_{\phi}(r_i)$.  Suppose that $L_{\phi}(r_i)$ is a single vertex with label $u$. Since each $\phi(x_i) \geq 0$,  either $u$ is followed by $x_i$ in $r_i$, or the final letter of $u$ is $x_i^{-1}$. In either case, $u \in \mathcal{\mathcal{A}}$ and thus $\mathcal{A}$ contains exactly one element. Suppose instead that $L_{\phi}(r_i)$ consists of two vertices $u$ and $ux_i^{\pm}$. Exactly one of these words is a summand of $\frac{\partial r_i}{\partial x_i}$, depending on whether we choose $x_i$ or $x_i^{-1}$. Hence, it follows in this case also that $\mathcal{A}$ contains exactly one element, and this element can be expressed as $kt^{P_i}$, for some $k \in K$.
+
+Finally we consider $\frac{\partial r_1}{\partial x_1}$. Defining $\mathcal{A}$ as above, $\mathcal{A}$ has exactly two elements given by the reduced words $u$ and $uv$, where $\phi(u) = P_i$ and $\phi(v) = 0$, where $u$ is the label of the path joining the marked vertex $\ast$ to the first minimum vertex which is a summand of $\frac{\partial r_1}{\partial x_1}$, and $v$ is the label of the path joining the two minima. Then $u = kt^{P_i}$ and $uv = kv't^{P_i}$, for some $k, v' \in K$. Note that the element $1+v' \in \mathbb{Z}G$ is not invertible over $\widehat{\mathbb{Q}G}^{\phi}$ by Lemma~\ref{units}, and thus $k(1-v')$ is not a unit in $\widehat{\mathbb{Q}G}^{\phi}$.\end{proof}
+
+\begin{lemma}\label{sigma invariant}
+Let $G$ be a group given by the deficiency 1 presentation
+\[G = \langle x_1, \ldots, x_{n+1} \mid r_1, \ldots, r_n \rangle.\] Suppose that $\mathbb{Q}G$ has no non-trivial zero-divisors. Let $\phi \colon G \to \mathbb{Z}$ be a homomorphism. \begin{enumerate}
+    \item If $((r_1, \ldots, r_n),\phi)$ satisfies the unique minimum condition then $\phi \in \Sigma(G)$.
+    \item If $((r_1, \ldots, r_n),\phi)$ satisfies the repeated minimum condition then $\phi \not \in \Sigma(G)$.
+\end{enumerate} 
+\end{lemma}
+
+\begin{proof}
+The first statement follows from \cite[Theorem~3.4]{KKW}.
+
+For the second statement, by Theorem~\ref{Sikorav} it suffices to show that $H_1(G; \widehat{\mathbb{Q}G}^{\phi})$ is non-trivial whenever $((r_1, \ldots, r_n), \phi)$ satisfies the repeated minimum condition. To that end, consider the chain complex of $\mathbb{Z}G$-modules
+\begin{equation}\label{chain complex}C_2 \xrightarrow{\partial_2} C_1 \xrightarrow{\partial_1} C_0,\end{equation}
+where $C_2$ is the free $\mathbb{Z}G$-module of rank $n$ with an ordered basis identified with the relators $(r_1, \ldots, r_n)$, $C_1$ is the free $\mathbb{Z}G$-module of rank $n+1$ with an ordered basis identified with the generators $(x_1, \ldots, x_{n+1})$, and $C_0 \simeq \mathbb{Z}G$. Then $\partial_1$ is the map given by the column vector with entries $x_i - 1$, for $1 \leq i \leq n+1$. The differential $\partial_2$ is given by the matrix $A$ of Fox derivatives $\left(\frac{\partial r_i}{\partial x_j} \right)$. After possible re-ordering, we may assume that $r_1$ is the relator with the repeated minimum. We tensor the chain complex \eqref{chain complex} by $\widehat{\mathbb{Q}G}^{\phi}$. Let $A'$ be the matrix obtained from $A$ by restricting the boundary map to the subspace of $C_1$ spanned by the generators $\{x_1, \ldots, x_n\}$. Since $\phi(x_{n+1}) \neq 0$, it follows that
+\[H_1(G, \widehat{\mathbb{Q}G}^{\phi}) = \mathrm{coker}(A').\] Combining Lemma~\ref{matrix} with Lemma~\ref{invertibility}, it follows that $A'$ is non-invertible over $\widehat{\mathbb{Q}G}^{\phi}$. Thus $H_1(G, \widehat{\mathbb{Q}G}^{\phi}) \neq 0$. \end{proof}
+
+\begin{lemma}\label{min_max}
+Let $G$ be a random group of deficiency 1. Then, with positive probability, there exists a character $\phi \colon G \to \mathbb{Z}$ such that $\phi$ satisfies the unique minimum condition and $-\phi$ satisfies the repeated minimum condition. 
+\end{lemma}
+
+\begin{proof}
+For each positive integer $l$, let $\mathcal{R}_l$ denote the set of $n$-tuples $(r_1, \ldots, r_n)$ of cyclically reduced words in the alphabet $\{x_1^{\pm}, \ldots, x_{n+1}^{\pm}\}$ of positive length $\leq l$. We let $\mathcal{T}$ denote the set of deficiency-1 presentations of groups $G$ which admit a character $\phi \colon G \to \mathbb{Z}$ as in the statement of the lemma. We claim there exists an injection $f \colon \mathcal{R}_l \to \mathcal{T} \cap \mathcal{R}_{l+12}$. It will then follow that 
+\[ \frac{|\mathcal{T} \cap \mathcal{R}_{l+12}|}{|\mathcal{R}_{l+12}|} \geq \frac{|\mathcal{R}_l|}{|\mathcal{R}_{l+12}|} > 0. \]
+
+To define $f$, note that for each cyclically reduced $n$-tuple $(r_1, \ldots, r_n)$, there exists a non-trivial map $\phi \colon F(x_1, \ldots, x_{n+1}) \to \mathbb{Z}$ such that $\phi(r_i) = 0$ for every $i$. After possible re-ordering, assume $\phi(x_{n+1}) < 0$. For each relator $r_i$, form a new relator $r_i'$ by inserting a commutator $[x_{n+1}, x_i^{\epsilon}]$ at the first $\phi$-minimal vertex along $C_{r_i}$, where $\epsilon = 1$ if $\phi(x_i) \leq 0$ and $\epsilon = -1$ otherwise. Now for each $i > 1$, form a new relator ${r_i}''$ by inserting the commutator $[x_{n+1}, x_i^{-\epsilon}]$ at the first $\phi$-maximal vertex along $C_{r_i'}$. Form $r_1''$ by inserting the square $[x_{n+1}, x_1^{-\epsilon}]^2$ of the commutator at the first $\phi$-maximal vertex along $C_{r_1'}$. The lower section $L_{\phi}(r''_i)$ of each $r_i''$ consists of a single vertex or an edge labelled by the element $x_i$. The upper section $U_{\phi}(r''_{1})$ of $r_1''$ consists of two vertices or two edges labelled by $x_1$, and for $i > 1$ the upper section $U_{\phi}(r''_{i})$ of $r_i''$ consists of a single vertex or edge labelled by $x_i$. Hence $((r_1'', \ldots, r_n''), \phi)$ satisfies the unique minimum condition and $((r_1'', \ldots, r_n''), -\phi)$ satisfies the repeated minimum condition. The map $f$ is injective since there exists a left inverse $g \colon \mathrm{im}(f) \to \mathcal{R}_l$  of $f$ which acts by removing the commutators at the $\phi$-minimal and $\phi$-maximal vertices or edges of the $r_i''$. \end{proof}
+
+\begin{thm}\label{non-symmetricity}
+Let $G$ be a random group of deficiency 1. Then with positive asympototic probability, $\Sigma(G)$ is non-empty and non-symmetric. 
+\end{thm}
+
+\begin{proof}
+A random deficiency 1 presentation of a group $G$ satisfies the $C''(\frac{1}{6})$ condition, almost surely \cite{Gromov1993}. In particular, $G$ is torsion-free, hyperbolic and thus $\mathbb{Q}G$ has no non-trivial zero-divisors. By Lemma~\ref{min_max}, a random deficiency 1 group admits a character $\phi$ such that $\phi$ satisfies the unique minimum condition and $-\phi$ satisfies the repeated minimum condition, with positive asymptotic probability. Thus by Lemma~\ref{sigma invariant}, $\phi \in \Sigma(G)$ and $-\phi \not \in \Sigma(G)$.\end{proof}
+
+
+\begin{corollary}
+Let $G$ be a random group of deficiency 1. Then with positive asymptotic probability, $G$ is not subgroup separable.
+\end{corollary}
+
+\begin{proof}
+Combine Theorem~\ref{non-symmetricity} with Lemma~\ref{separability}.\end{proof}
+
+
+\begin{corollary}
+Let $G$ be a random group of deficiency 1. Then $G$ is free-by-cyclic with asymptotic probability that is positive and bounded away from 1.
+\end{corollary}
+
+\begin{proof}
+A random deficiency 1 group has first Betti number $\beta_1(G)$ equal to 1, almost surely. Hence $\mathrm{Hom}(G, \mathbb{Z}) \simeq \mathbb{Z} \simeq \langle \phi \rangle$. By Theorem~\ref{non-symmetricity}, $\Sigma(G)$ is non-empty and non-symmetric, with positive asymptotic probability. Hence $\Sigma(G) = \{\lambda \phi \mid \lambda > 0\}$ or $\Sigma(G) = \{\lambda \phi \mid \lambda < 0\}.$ In particular $\Sigma(G) \cap - \Sigma(G) = \emptyset$, and thus $G$ does not fibre algebraically. Hence the asymptotic probability that a random deficiency 1 group is free-by-cyclic is bounded away from 1. The fact that it is greater than 0 follows from \cite[Theorem~A]{KKW}.\end{proof}
+
+
+\bibliographystyle{alpha}
+\bibliography{refs.bib}
+
+
+\end{document}
